@@ -22,3 +22,5 @@ npm run dev
 3. Every push to `main` builds and deploys automatically. The site appears at `https://<username>.github.io/<repo>/`.
 
 The contact form opens the visitor's email app (GitHub Pages has no server). To receive submissions directly, swap it for a free service such as Formspree.
+
+https://peterjameslewis1.github.io/artist-portfolio/#about
