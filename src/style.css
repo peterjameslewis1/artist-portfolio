@@ -138,14 +138,6 @@ em { font-style: italic; color: var(--accent); }
 /* ---------- Gallery ---------- */
 .page-head { display: flex; justify-content: space-between; align-items: end; flex-wrap: wrap; gap: 16px; margin-bottom: 40px; }
 .page-head h1 { margin: 0; }
-.filters { display: flex; gap: 8px; flex-wrap: wrap; }
-.chip {
-  font: 400 0.85rem var(--sans); color: var(--muted);
-  background: none; border: 1px solid var(--line); border-radius: 999px;
-  padding: 6px 16px; cursor: pointer; transition: all .2s;
-}
-.chip:hover { color: var(--text); border-color: var(--muted); }
-.chip[aria-selected='true'] { background: var(--text); color: var(--bg); border-color: var(--text); }
 
 .gallery-grid { columns: 3 280px; column-gap: 24px; }
 .gallery-grid .tile { break-inside: avoid; margin-bottom: 32px; }

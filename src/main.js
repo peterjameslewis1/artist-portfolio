@@ -26,34 +26,10 @@ function renderFeatured() {
   artworks.slice(0, 3).forEach((art, i) => grid.append(tile({ ...art, ratio: 4 / 5 }, i)))
 }
 
-// ---------- Gallery + filters ----------
-let activeFilter = 'All'
-
-function renderFilters() {
-  const cats = ['All', ...new Set(artworks.map((a) => a.category))]
-  const wrap = $('#filters')
-  wrap.innerHTML = ''
-  cats.forEach((cat) => {
-    const b = document.createElement('button')
-    b.className = 'chip'
-    b.textContent = cat
-    b.setAttribute('role', 'tab')
-    b.setAttribute('aria-selected', String(cat === activeFilter))
-    b.addEventListener('click', () => {
-      activeFilter = cat
-      renderFilters()
-      renderGallery()
-    })
-    wrap.append(b)
-  })
-}
-
+// ---------- Gallery ----------
 function renderGallery() {
   const grid = $('#gallery-grid')
-  grid.innerHTML = ''
-  artworks.forEach((art, i) => {
-    if (activeFilter === 'All' || art.category === activeFilter) grid.append(tile(art, i))
-  })
+  artworks.forEach((art, i) => grid.append(tile(art, i)))
 }
 
 // ---------- Lightbox ----------
@@ -121,7 +97,6 @@ $('#contact-form').addEventListener('submit', (e) => {
 
 $('#year').textContent = new Date().getFullYear()
 renderFeatured()
-renderFilters()
 renderGallery()
 renderCv()
 window.addEventListener('hashchange', showTab)
